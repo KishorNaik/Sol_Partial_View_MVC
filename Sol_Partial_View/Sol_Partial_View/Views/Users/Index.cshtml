@@ -1,0 +1,24 @@
+﻿@model Sol_Partial_View.ViewModel.UserViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<form asp-controller="Users" asp-action="OnSubmit">
+    <div class="container">
+
+        @*User Model*@
+        @*@await Html.PartialAsync("~/Views/Users/PartialView/_UserPartialView.cshtml",Model)*@
+        <partial name="~/Views/Users/PartialView/_UserPartialView.cshtml" model="Model" />
+
+        @*User Communication Model*@
+        @*@await Html.PartialAsync("~/Views/Users/PartialView/_UserCommunicationPartialView.cshtml",Model)*@
+        <partial name="~/Views/Users/PartialView/_UserCommunicationPartialView.cshtml" model="Model" />
+
+        @*User Login Model*@
+        @*@await Html.PartialAsync("~/Views/Users/PartialView/_UserLoginPartialView.cshtml",Model)*@
+
+        <partial name="~/Views/Users/PartialView/_UserLoginPartialView.cshtml" model="Model" />
+    </div>
+</form>
